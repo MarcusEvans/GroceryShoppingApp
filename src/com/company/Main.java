@@ -6,7 +6,7 @@ public class Main {
         System.out.println("\nHello Grocery Shopping App\n");
 
 
-        ShoppingList = new ShoppingList();
+        GroceryList groceries = new GroceryList();
 
 
 
