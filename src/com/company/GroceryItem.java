@@ -13,9 +13,9 @@ public class GroceryItem {
 
 
 
-    public GroceryItem(LocalDate date, String groceryItems, int numberOfItems) {
+    public GroceryItem(LocalDate date, String groceryItem, int numberOfItems) {
         this.date = date;
-        this.groceryItems = groceryItems;
+        this.groceryItem = groceryItem;
         this.numberOfItems = numberOfItems;
     }
 
@@ -27,17 +27,35 @@ public class GroceryItem {
         this.date = LocalDate.now().minusDays(1);
     }
 
-    public String getGroceryItem() {
-        return groceryItem;
+    public ArrayList<ArrayList<String>> getGroceryItem() {
+        Random rand = new Random();
+        ArrayList<String> groceries = new ArrayList<>();
+        ArrayList<ArrayList<String>> randomGrocery = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            groceries.add("Ham");
+            groceries.add("Milk");
+            groceries.add("Eggs");
+        }
+        for (int i = 0; i < groceries.size(); i++) {
+            int num = rand.nextInt(3)+1;
+            if (groceries.get(i).equals(num)){
+                randomGrocery.add(groceries);
+            }
+        }
+        return randomGrocery;
     }
-    
+
+    public int getNumberOfItems() {
+        return numberOfItems;
+    }
+
+    public void setNumberOfItems(int numberOfItems) {
+        Random random =new Random();
+        this.numberOfItems = random.nextInt(5)+1;
+    }
 
     @Override
     public String toString() {
-        return "GroceryItem{" +
-                "date=" + date +
-                ", groceryItem='" + groceryItem + '\'' +
-                ", numberOfItems=" + numberOfItems +
-                '}';
+        return  date + "|" +  groceryItem + "|" + numberOfItems + "\n";
     }
 }
