@@ -1,32 +1,36 @@
 package com.company;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class GroceryItem {
 
-    Random rand = new Random();
 
-    private LocalDateTime date;
-    public ArrayList<String> groceryItem;
+    private LocalDate date;
+    public String groceryItem;
     private int numberOfItems;
 
 
 
-    public GroceryItem(LocalDateTime date, ArrayList groceryItems, int numberOfItems) {
-        date = purchaseDate;
-        groceryItems = purchasedItem;
-        numberOfItems = amountOfItems;
+    public GroceryItem(LocalDate date, String groceryItems, int numberOfItems) {
+        this.date = date;
+        this.groceryItems = groceryItems;
+        this.numberOfItems = numberOfItems;
     }
 
-    public void setDate(LocalDateTime value) {
-        date = LocalDateTime.now().minusDays(1);
+    public LocalDate getDate() {
+        return date;
     }
 
-    public ArrayList<String> getGroceryItem() {
+    public void setDate(LocalDate date) {
+        this.date = LocalDate.now().minusDays(1);
+    }
+
+    public String getGroceryItem() {
         return groceryItem;
     }
+    
 
     @Override
     public String toString() {
