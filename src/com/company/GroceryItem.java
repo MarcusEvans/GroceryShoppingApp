@@ -9,7 +9,7 @@ public class GroceryItem {
     Random rand = new Random();
 
     private LocalDateTime date;
-    public ArrayList<String> ;
+    public ArrayList<String> groceryItem;
     private int numberOfItems;
 
 
