@@ -8,14 +8,14 @@ public class GroceryItem {
 
 
     private LocalDate date;
-    public String groceryItem;
+    public String description;
     private int numberOfItems;
 
 
 
-    public GroceryItem(LocalDate date, String groceryItem, int numberOfItems) {
+    public GroceryItem(LocalDate date, String description, int numberOfItems) {
         this.date = date;
-        this.groceryItem = groceryItem;
+        this.description = description;
         this.numberOfItems = numberOfItems;
     }
 
@@ -27,7 +27,7 @@ public class GroceryItem {
         this.date = LocalDate.now().minusDays(1);
     }
 
-    public ArrayList<ArrayList<String>> getGroceryItem() {
+    public ArrayList<ArrayList<String>> getDescription() {
         Random rand = new Random();
         ArrayList<String> groceries = new ArrayList<>();
         ArrayList<ArrayList<String>> randomGrocery = new ArrayList<>();
@@ -56,6 +56,6 @@ public class GroceryItem {
 
     @Override
     public String toString() {
-        return  date + "|" +  groceryItem + "|" + numberOfItems + "\n";
+        return  date + "|" +  description + "|" + numberOfItems + "\n";
     }
 }
